@@ -1,12 +1,17 @@
 index.cjs(3,23): error TS1479: The current file is a CommonJS module whose imports will produce 'require' calls; however, the referenced file is an ECMAScript module and cannot be imported with 'require'. Consider writing a dynamic 'import("inner/mjs/index")' call instead.
+index.js(3,23): error TS1479: The current file is a CommonJS module whose imports will produce 'require' calls; however, the referenced file is an ECMAScript module and cannot be imported with 'require'. Consider writing a dynamic 'import("inner/mjs/index")' call instead.
+  To convert this file to an ECMAScript module, change its file extension to '.mjs', or add the field `"type": "module"` to 'package.json'.
 node_modules/inner/index.d.cts(3,22): error TS1479: The current file is a CommonJS module whose imports will produce 'require' calls; however, the referenced file is an ECMAScript module and cannot be imported with 'require'. Consider writing a dynamic 'import("inner/mjs/index")' call instead.
 node_modules/inner/index.d.ts(3,22): error TS1479: The current file is a CommonJS module whose imports will produce 'require' calls; however, the referenced file is an ECMAScript module and cannot be imported with 'require'. Consider writing a dynamic 'import("inner/mjs/index")' call instead.
 
 
-==== index.js (0 errors) ====
+==== index.js (1 errors) ====
     // esm format file
     import * as cjsi from "inner/cjs/index";
     import * as mjsi from "inner/mjs/index";
+                          ~~~~~~~~~~~~~~~~~
+!!! error TS1479: The current file is a CommonJS module whose imports will produce 'require' calls; however, the referenced file is an ECMAScript module and cannot be imported with 'require'. Consider writing a dynamic 'import("inner/mjs/index")' call instead.
+!!! error TS1479:   To convert this file to an ECMAScript module, change its file extension to '.mjs', or add the field `"type": "module"` to 'package.json'.
     import * as typei from "inner/js/index";
     cjsi;
     mjsi;
@@ -61,7 +66,7 @@ node_modules/inner/index.d.ts(3,22): error TS1479: The current file is a CommonJ
     {
         "name": "package",
         "private": true,
-        "type": "module"
+        "type": "module",
     }
 ==== node_modules/inner/package.json (0 errors) ====
     {
@@ -73,4 +78,3 @@ node_modules/inner/index.d.ts(3,22): error TS1479: The current file is a CommonJ
             "./js/*": "./*.js"
         }
     }
-    

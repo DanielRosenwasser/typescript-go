@@ -1,6 +1,22 @@
 --- old.nodeModulesAllowJsPackagePatternExports(module=node18).js
 +++ new.nodeModulesAllowJsPackagePatternExports(module=node18).js
-@@= skipped -83, +83 lines =@@
+@@= skipped -65, +65 lines =@@
+ }
+
+ //// [index.js]
++"use strict";
++Object.defineProperty(exports, "__esModule", { value: true });
+ // esm format file
+-import * as cjsi from "inner/cjs/index";
+-import * as mjsi from "inner/mjs/index";
+-import * as typei from "inner/js/index";
++const cjsi = require("inner/cjs/index");
++const mjsi = require("inner/mjs/index");
++const typei = require("inner/js/index");
+ cjsi;
+ mjsi;
+ typei;
+@@= skipped -17, +19 lines =@@
  typei;
  //// [index.cjs]
  "use strict";

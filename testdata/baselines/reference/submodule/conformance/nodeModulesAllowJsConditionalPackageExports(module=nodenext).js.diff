@@ -1,8 +1,8 @@
 --- old.nodeModulesAllowJsConditionalPackageExports(module=nodenext).js
 +++ new.nodeModulesAllowJsConditionalPackageExports(module=nodenext).js
-@@= skipped -122, +122 lines =@@
+@@= skipped -121, +121 lines =@@
+     }
  }
-
 
 +//// [index.js]
 +// esm format file

@@ -2,12 +2,25 @@
 +++ new.nodeModulesPackagePatternExports(module=node18).errors.txt
 @@= skipped -0, +0 lines =@@
  index.cts(3,23): error TS1479: The current file is a CommonJS module whose imports will produce 'require' calls; however, the referenced file is an ECMAScript module and cannot be imported with 'require'. Consider writing a dynamic 'import("inner/mjs/index")' call instead.
++index.ts(3,23): error TS1479: The current file is a CommonJS module whose imports will produce 'require' calls; however, the referenced file is an ECMAScript module and cannot be imported with 'require'. Consider writing a dynamic 'import("inner/mjs/index")' call instead.
++  To convert this file to an ECMAScript module, change its file extension to '.mts', or add the field `"type": "module"` to 'package.json'.
  node_modules/inner/index.d.cts(3,22): error TS1479: The current file is a CommonJS module whose imports will produce 'require' calls; however, the referenced file is an ECMAScript module and cannot be imported with 'require'. Consider writing a dynamic 'import("inner/mjs/index")' call instead.
 -node_modules/inner/index.d.ts(2,13): error TS2303: Circular definition of import alias 'cjs'.
  node_modules/inner/index.d.ts(3,22): error TS1479: The current file is a CommonJS module whose imports will produce 'require' calls; however, the referenced file is an ECMAScript module and cannot be imported with 'require'. Consider writing a dynamic 'import("inner/mjs/index")' call instead.
 
 
-@@= skipped -29, +28 lines =@@
+-==== index.ts (0 errors) ====
++==== index.ts (1 errors) ====
+     // esm format file
+     import * as cjsi from "inner/cjs/index";
+     import * as mjsi from "inner/mjs/index";
++                          ~~~~~~~~~~~~~~~~~
++!!! error TS1479: The current file is a CommonJS module whose imports will produce 'require' calls; however, the referenced file is an ECMAScript module and cannot be imported with 'require'. Consider writing a dynamic 'import("inner/mjs/index")' call instead.
++!!! error TS1479:   To convert this file to an ECMAScript module, change its file extension to '.mts', or add the field `"type": "module"` to 'package.json'.
+     import * as typei from "inner/js/index";
+     cjsi;
+     mjsi;
+@@= skipped -29, +33 lines =@@
      cjsi;
      mjsi;
      typei;
