@@ -78,7 +78,6 @@ func fmtMain(sys System, input, output string) ExitStatus {
 		Path:             pathified,
 		JSDocParsingMode: ast.JSDocParsingModeParseAll,
 	}, text, core.GetScriptKindFromFileName(string(pathified)))
-	ast.SetParentInChildren(sourceFile.AsNode())
 	edits := format.FormatDocument(ctx, sourceFile)
 	newText := applyBulkEdits(text, edits)
 
@@ -297,6 +296,7 @@ func emitFilesAndReportErrors(sys System, program *compiler.Program, reportDiagn
 	configFileParsingDiagnosticsLength := len(allDiagnostics)
 
 	allDiagnostics = append(allDiagnostics, program.GetSyntacticDiagnostics(ctx, nil)...)
+	allDiagnostics = append(allDiagnostics, program.GetProgramDiagnostics()...)
 
 	if len(allDiagnostics) == configFileParsingDiagnosticsLength {
 		// Options diagnostics include global diagnostics (even though we collect them separately),

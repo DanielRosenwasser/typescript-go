@@ -91,23 +91,34 @@ export const cjsNonmain = true;
     }
 }
 
-//// [index.mjs]
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.f = exports.e = exports.d = exports.c = exports.b = exports.a = void 0;
+//// [index.js]
 // esm format file
-const cjs = require("package/cjs");
-const mjs = require("package/mjs");
-const type = require("package");
-exports.a = cjs;
-exports.b = mjs;
-exports.c = type;
-const cjsi = require("inner/cjs");
-const mjsi = require("inner/mjs");
-const typei = require("inner");
-exports.d = cjsi;
-exports.e = mjsi;
-exports.f = typei;
+import * as cjs from "package/cjs";
+import * as mjs from "package/mjs";
+import * as type from "package";
+export const a = cjs;
+export const b = mjs;
+export const c = type;
+import * as cjsi from "inner/cjs";
+import * as mjsi from "inner/mjs";
+import * as typei from "inner";
+export const d = cjsi;
+export const e = mjsi;
+export const f = typei;
+//// [index.mjs]
+// esm format file
+import * as cjs from "package/cjs";
+import * as mjs from "package/mjs";
+import * as type from "package";
+export const a = cjs;
+export const b = mjs;
+export const c = type;
+import * as cjsi from "inner/cjs";
+import * as mjsi from "inner/mjs";
+import * as typei from "inner";
+export const d = cjsi;
+export const e = mjsi;
+export const f = typei;
 //// [index.cjs]
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -125,33 +136,22 @@ const typei = require("inner");
 exports.d = cjsi;
 exports.e = mjsi;
 exports.f = typei;
-//// [index.js]
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.f = exports.e = exports.d = exports.c = exports.b = exports.a = void 0;
-// esm format file
-const cjs = require("package/cjs");
-const mjs = require("package/mjs");
-const type = require("package");
-exports.a = cjs;
-exports.b = mjs;
-exports.c = type;
-const cjsi = require("inner/cjs");
-const mjsi = require("inner/mjs");
-const typei = require("inner");
-exports.d = cjsi;
-exports.e = mjsi;
-exports.f = typei;
 
 
+//// [index.d.ts]
+export declare const a: any;
+export declare const b: any;
+export declare const c: any;
+import * as cjsi from "inner/cjs";
+import * as mjsi from "inner/mjs";
+import * as typei from "inner";
+export declare const d: typeof cjsi;
+export declare const e: typeof mjsi;
+export declare const f: typeof typei;
 //// [index.d.mts]
-// esm format file
-import * as cjs from "package/cjs";
-import * as mjs from "package/mjs";
-import * as type from "package";
-export declare const a: typeof cjs;
-export declare const b: typeof mjs;
-export declare const c: typeof type;
+export declare const a: any;
+export declare const b: any;
+export declare const c: any;
 import * as cjsi from "inner/cjs";
 import * as mjsi from "inner/mjs";
 import * as typei from "inner";
@@ -159,27 +159,9 @@ export declare const d: typeof cjsi;
 export declare const e: typeof mjsi;
 export declare const f: typeof typei;
 //// [index.d.cts]
-// cjs format file
-import * as cjs from "package/cjs";
-import * as mjs from "package/mjs";
-import * as type from "package";
-export declare const a: typeof cjs;
-export declare const b: typeof mjs;
-export declare const c: typeof type;
-import * as cjsi from "inner/cjs";
-import * as mjsi from "inner/mjs";
-import * as typei from "inner";
-export declare const d: typeof cjsi;
-export declare const e: typeof mjsi;
-export declare const f: typeof typei;
-//// [index.d.ts]
-// esm format file
-import * as cjs from "package/cjs";
-import * as mjs from "package/mjs";
-import * as type from "package";
-export declare const a: typeof cjs;
-export declare const b: typeof mjs;
-export declare const c: typeof type;
+export declare const a: any;
+export declare const b: any;
+export declare const c: any;
 import * as cjsi from "inner/cjs";
 import * as mjsi from "inner/mjs";
 import * as typei from "inner";

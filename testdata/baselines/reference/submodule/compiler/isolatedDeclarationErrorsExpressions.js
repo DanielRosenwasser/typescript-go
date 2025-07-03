@@ -242,10 +242,10 @@ export declare const numberConst = 1;
 export declare const numberConstBad1: number;
 export declare const numberConstBad2: number;
 export declare const numberConstBad3 = 1;
-export declare const bigIntConst = 1;
+export declare const bigIntConst = 1n;
 export declare const bigIntConstBad1: bigint;
 export declare const bigIntConstBad2: bigint;
-export declare const bigIntConstBad3 = 1;
+export declare const bigIntConstBad3 = 1n;
 export declare const stringConst = "s";
 export declare const stringConstBad: string;
 // These are just strings
@@ -330,6 +330,8 @@ export declare function templateParamOk1(p?: string): void;
 export declare function templateParamOk2(p?: string): void;
 export declare function templateParamOk3(p?: string): void;
 export declare function templateParamOk4(p?: string): void;
+export declare const a: number;
+export declare const b: number;
 export declare function foo([, , b]?: [
     number,
     number,
