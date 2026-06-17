@@ -22099,6 +22099,13 @@ func (c *Checker) isNonGenericTopLevelType(t *Type) bool {
 }
 
 func (c *Checker) instantiateTypeWorker(t *Type, m *TypeMapper, alias *TypeAlias) *Type {
+	if result, ok := c.tryRunTypeInstantiationVM(t, m); ok {
+		return result
+	}
+	return c.instantiateTypeWorkerSlow(t, m, alias)
+}
+
+func (c *Checker) instantiateTypeWorkerSlow(t *Type, m *TypeMapper, alias *TypeAlias) *Type {
 	flags := t.flags
 	switch {
 	case flags&TypeFlagsTypeParameter != 0:
